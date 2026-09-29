@@ -1,14 +1,16 @@
 # Roon & Spotify Now Playing Bridge
 
 A small node service that allows you to see what's now playing via Roon or Spotify on any of your
-speaker zones, displayed on an inexpensive 3" ESP32-S3 touch display. Additionally the remote allows
-you to change songs, switch services, pause all, etc. Base project is complete, with current work
+speaker zones, displayed on an inexpensive 3.5" ESP32-S3 touch display. Additionally the remote allows
+you to change songs, switch services, control speaker zones, etc. Base project is complete, with current work
 being done on the UI and expanded functionality.
 
 Roon's API expects a persistent connection and a real computer, which an ESP32 can't provide. The
-bridge handles Roon and Spotify, then serves what the display needs — track info, resized album art,
+bridge handles Roon and Spotify, then serves what the display needs: track info, resized album art,
 and controls — as simple web requests. The display just asks what's playing every couple of seconds,
 so a dropped connection or a restart fixes itself.
+
+//developed with the assistance of Claude code. 
 
 ## What the panel shows
 
