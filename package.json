@@ -1,0 +1,19 @@
+{
+  "name": "roon-now-playing-bridge",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Bridges a Roon Core (and Spotify) to a simple HTTP API for ESP32-S3 displays: now playing, album art, and a touch remote.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "node-roon-api": "RoonLabs/node-roon-api",
+    "node-roon-api-browse": "github:RoonLabs/node-roon-api-browse",
+    "node-roon-api-image": "RoonLabs/node-roon-api-image",
+    "node-roon-api-status": "RoonLabs/node-roon-api-status",
+    "node-roon-api-transport": "RoonLabs/node-roon-api-transport",
+    "sharp": "^0.33.5"
+  }
+}

@@ -1,0 +1,21 @@
+node_modules/
+# Your own deck layout (zone names are personal); copy deck.example.json to start one.
+deck.json
+# Roon pairing token, written on first pair. Host-specific: never commit or copy between machines.
+config.json
+bridge.log
+*.log
+
+# local rollback copies and Roon task exports
+*.pre-deck
+*.bak-*
+RoonNowPlayingBridge.task.xml
+
+# Spotify app config and OAuth refresh token - credentials, host-specific
+spotify.json
+spotify-token.json
+spotify-token.json.tmp
+# Spotify devices seen so far (account-specific)
+spotify-devices.json
+spotify-devices.json.tmp
+*.pre-spotify

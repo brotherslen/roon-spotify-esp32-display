@@ -1,0 +1,33 @@
+﻿{
+    "_readme": [
+        "Copy the tiles you want into deck.json. Edits apply on the device's next poll (about 2s); no bridge restart or reflash.",
+        "Tiles fill a 3-column grid, top to bottom, and scroll past 12.",
+        "zone: a Roon zone's display name (case-insensitive) or zone id.",
+        "icon (optional): audio play pause stop next prev shuffle loop volume mute list radio home power settings bell bolt bulb wifi refresh plus minus ok close eye image video.",
+        "color (optional): tile background as #rrggbb. A tile whose zone is playing is highlighted.",
+        "Playlist and radio titles must match Roon exactly: GET http://<bridge>:8080/browse?hierarchy=playlists (or internet_radio) lists them.",
+        "Spotify tiles (type spotify): playpause / next / previous / volume_step / play_playlist (your playlist's exact name) / transfer (a Spotify Connect device name). Needs Spotify linked: see lib/spotify.js."
+    ],
+    "title": "Deck",
+    "tiles": [
+        { "id": "remote", "type": "open_remote", "label": "Roon", "icon": "audio", "color": "#6d3fd6" },
+        { "id": "remote_kitchen", "type": "open_remote", "zone": "Kitchen", "label": "Kitchen remote" },
+
+        { "id": "pause_all", "type": "roon", "action": "pause_all", "label": "Pause all" },
+        { "id": "kitchen", "type": "roon", "action": "playpause", "zone": "Kitchen", "label": "Kitchen" },
+        { "id": "kitchen_next", "type": "roon", "action": "next", "zone": "Kitchen", "label": "Skip", "icon": "next" },
+        { "id": "kitchen_up", "type": "roon", "action": "volume_step", "zone": "Kitchen", "value": 2, "label": "Vol +", "icon": "plus" },
+        { "id": "kitchen_down", "type": "roon", "action": "volume_step", "zone": "Kitchen", "value": -2, "label": "Vol -", "icon": "minus" },
+        { "id": "morning", "type": "roon", "action": "play_playlist", "zone": "Kitchen", "title": "Morning", "label": "Morning" },
+        { "id": "kexp", "type": "roon", "action": "play_radio", "zone": "Kitchen", "title": "KEXP", "label": "KEXP" },
+
+        { "id": "spotify", "type": "open_remote", "zone": "Spotify", "label": "Spotify", "color": "#1a7f3c" },
+        { "id": "sp_pp", "type": "spotify", "action": "playpause", "label": "Spotify" },
+        { "id": "sp_next", "type": "spotify", "action": "next", "label": "Skip", "icon": "next" },
+        { "id": "sp_mix", "type": "spotify", "action": "play_playlist", "title": "My Playlist", "label": "My Playlist" },
+        { "id": "sp_kitchen", "type": "spotify", "action": "transfer", "device": "Kitchen", "label": "Spotify to Kitchen" },
+
+        { "id": "lights", "type": "http", "method": "POST", "url": "http://192.168.1.50:8123/api/webhook/some-id", "label": "Lights", "icon": "bulb" },
+        { "id": "json_post", "type": "http", "method": "POST", "url": "http://example.lan/api", "body": { "on": true }, "label": "Custom", "icon": "bolt" }
+    ]
+}
