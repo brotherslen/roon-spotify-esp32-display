@@ -10,19 +10,21 @@ bridge handles Roon and Spotify, then serves what the display needs — track in
 and controls — as simple web requests. The display just asks what's playing every couple of seconds,
 so a dropped connection or a restart fixes itself.
 
-## What it drives
+## What the panel shows
 
-| Display | What it shows |
+| Screen | What it does |
 |---|---|
-| ESP32-S3 bar display | Now playing: title, artist, album art, progress |
-| 3.5" touch panel | A tile grid: play/pause per zone, volume, playlists, radio, transfer between zones |
+| Now playing | Title, artist, album art and progress for the active zone |
+| Deck | A tile grid: play/pause per zone, volume, playlists, radio, transfer between zones |
+| Remote | Transport controls for whichever zone you're pointed at, Roon or Spotify |
 
 ## Endpoints
 
 | Route | Purpose |
 |---|---|
-| `GET /nowplaying` | Current track as JSON, plus album art as a pre-scaled JPEG |
-| `GET /deck` | Tile layout and per-tile state for the touch panel |
+| `GET /nowplaying` | Current track as JSON |
+| `GET /art.raw` | Album art, pre-scaled to the panel's resolution |
+| `GET /deck` | Tile layout and per-tile state |
 | `POST /remote/...` | Transport: play/pause, next, previous, volume, zone transfer |
 | `GET /library/...` | Browse Roon's library: playlists, radio, albums |
 | `GET /spotify/login` | One-time OAuth link for Spotify Connect |

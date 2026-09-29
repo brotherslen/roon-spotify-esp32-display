@@ -1,5 +1,5 @@
-// The 3.16" bar display's feed (/nowplaying + /art.raw), and / as a quick pairing check.
-// /art.raw also serves the touch deck, Spotify covers included.
+// The now-playing feed (/nowplaying + /art.raw), and / as a quick pairing check.
+// /art.raw serves the deck's tiles too, Spotify covers included.
 
 const { toDisplayText } = require("../lib/text");
 
@@ -41,7 +41,7 @@ function mount(app, { config, roon, art }) {
     app.get("/art.raw", async (req, res) => {
         const key = req.query.key;
         if (!key) return res.status(400).end();
-        // Optional ?size= for other panels; default stays ART_PX for the 3.16" bar display.
+        // Optional ?size= for other panels; the default is ART_PX from config.js.
         const size = req.query.size ? Math.round(Number(req.query.size)) : config.ART_PX;
         if (!Number.isFinite(size) || size < 32 || size > 480) return res.status(400).end();
         try {

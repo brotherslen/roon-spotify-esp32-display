@@ -1,5 +1,5 @@
-// Roon Now Playing bridge: serves the ESP32-S3 bar display (now playing) and the 3.5" touch deck
-// (remote, library, tiles) from a Roon Core and Spotify. See README.md.
+// Roon Now Playing bridge: serves an ESP32-S3 touch panel (now playing, remote, library, tiles)
+// from a Roon Core and Spotify. See README.md.
 //
 // This file only wires things together:
 //   lib/      roon (pairing + zones), spotify (Web API client), targets (Roon/Spotify behind one
