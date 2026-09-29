@@ -10,7 +10,7 @@ bridge handles Roon and Spotify, then serves what the display needs: track info,
 and controls — as simple web requests. The display just asks what's playing every couple of seconds,
 so a dropped connection or a restart fixes itself.
 
-//developed with the assistance of Claude code. 
+Developed with the assistance of Claude code. 
 
 ## What the panel shows
 
