@@ -1,4 +1,4 @@
-# Roon & Spotify Now Playing Bridge
+# Roon & Spotify Now Playing Bridge & Controller
 
 A small node service that allows you to see and control what's now playing via Roon or Spotify on any of your
 speaker zones, displayed on an inexpensive 3.5" ESP32-S3 touch display. Additionally the remote allows
